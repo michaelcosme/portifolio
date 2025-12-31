@@ -364,3 +364,194 @@ footer {
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--primary-bg); }
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; border: 2px solid var(--primary-bg); }
+/* ================================================================= */
+/* --- ÁREA MOBILE FINAL: EFEITOS VISUAIS + CORREÇÕES DE BUGS --- */
+/* ================================================================= */
+
+/* --- PARTE 1: CORREÇÃO VISUAL GERAL (BUGS) --- */
+
+/* Transforma o quadrado roxo borrado em um círculo suave */
+.blob {
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+/* --- PARTE 2: EXPERIÊNCIA MOBILE (MUDANÇAS GERAIS) --- */
+@media (max-width: 900px) {
+
+    /* --- A. CORREÇÕES DA NAVBAR E HEADER --- */
+    
+    /* Remove botão roxo extra da navbar para caber o menu */
+    .header-right .btn-sm-nav {
+        display: none; 
+    }
+
+    /* Ajusta espaçamento entre Dark Mode e Menu Hambúrguer */
+    .header-right {
+        gap: 15px;
+    }
+
+    /* Reduz a logo para não quebrar a linha */
+    .nav-container .hero-logo {
+        width: 110px;
+    }
+
+    /* Ajuste do padding da navbar */
+    .nav-container {
+        padding: 15px 20px;
+    }
+
+    /* Ajuste do brilho de fundo (Blob) no celular */
+    .blob {
+        width: 250px; height: 250px;
+        opacity: 0.4;
+        top: 20%;
+    }
+    
+    /* Garante que a logo fique na frente do brilho */
+    .hero-image img {
+        position: relative;
+        z-index: 5;
+    }
+
+    /* --- B. EFEITO DE "APP" (SCROLL LATERAL) --- */
+    
+    /* Transforma grades verticais em sliders laterais (Netflix Style) */
+    .services-grid, 
+    .testimonials-grid, 
+    .about-features {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        padding: 20px 5px 40px 5px;
+        margin: 0 -20px; /* Expande até a borda da tela */
+        padding-left: 25px;
+        padding-right: 25px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Esconde barra de rolagem */
+    .services-grid::-webkit-scrollbar, 
+    .testimonials-grid::-webkit-scrollbar {
+        display: none; 
+    }
+
+    /* Cards travando no centro ao rolar */
+    .service-card, 
+    .testimonial-card {
+        min-width: 280px;
+        max-width: 280px;
+        scroll-snap-align: center;
+        background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(10,10,22,0.9) 100%);
+        border: 1px solid rgba(143, 79, 255, 0.2);
+    }
+    
+    /* Features em grid compacto */
+    .about-features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 30px 0;
+        overflow: visible;
+    }
+
+    /* --- C. BOTÕES E INTERAÇÕES --- */
+
+    /* Botão Principal Pulsando (Chama Atenção) */
+    .hero-buttons .btn-primary {
+        animation: pulseCTA 2s infinite;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        justify-content: center;
+        font-size: 1.1rem;
+    }
+
+    /* Efeito de brilho passando no botão */
+    .hero-buttons .btn-primary::after {
+        content: '';
+        position: absolute;
+        top: 0; left: -100%;
+        width: 100%; height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        animation: shineBtn 3s infinite;
+    }
+
+    /* Feedback de toque (botão afunda levemente ao clicar) */
+    .btn:active, 
+    .service-card:active, 
+    .project-glass-card:active,
+    .faq-question:active {
+        transform: scale(0.96);
+        transition: transform 0.1s;
+    }
+
+    /* Títulos mais chamativos */
+    .section-title {
+        font-size: 2rem;
+        background: linear-gradient(to right, #fff, var(--accent-vibrant));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 40px;
+    }
+
+    /* Navbar Mobile mais legível */
+    .nav-links {
+        background: rgba(5, 5, 8, 0.95);
+        backdrop-filter: blur(30px);
+        border-left: 1px solid var(--accent-glow);
+    }
+    
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+
+    /* Footer ajustado */
+    .footer-cta {
+        margin: -80px 15px 40px;
+        padding: 30px 20px;
+    }
+    
+    .whatsapp-float {
+        width: 60px; height: 60px;
+        bottom: 20px; right: 20px;
+    }
+}
+
+/* --- NOVAS ANIMAÇÕES (NECESSÁRIAS) --- */
+
+@keyframes pulseCTA {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(143, 79, 255, 0.7); }
+    70% { transform: scale(1.02); box-shadow: 0 0 0 15px rgba(143, 79, 255, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(143, 79, 255, 0); }
+}
+
+@keyframes shineBtn {
+    0% { left: -100%; }
+    20% { left: 100%; }
+    100% { left: 100%; }
+}
+/* --- CORREÇÃO FINAL MOBILE: REMOVER O BOTÃO DE TEMA --- */
+@media (max-width: 900px) {
+    
+    /* Agora sim: Esconde a classe correta (.toggle-switch) no celular */
+    .toggle-switch {
+        display: none !important;
+    }
+
+    /* Garante que o Menu Hambúrguer vá para a ponta direita */
+    .header-right {
+        margin-left: auto; 
+        gap: 0; /* Remove espaços vazios extras */
+    }
+    
+    /* Ajuste fino para alinhar o ícone do menu verticalmente */
+    .mobile-menu-btn {
+        margin-left: 10px;
+    }
+}
