@@ -6,25 +6,31 @@
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Michael Cosme | Especialista em Sites de Alta Conversão</title>
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-container">
-                <span class="logo">Michael<span class="highlight">DEV</span></span>
-                <ul class="nav-links">
+                <img src="img/logo lateal navbar.png" alt="Michael Cosme" class="hero-logo">
+                
+                <ul class="nav-links" id="nav-menu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#servicos">Serviço</a></li>
                     <li><a href="#projetos">Projetos</a></li>
-                </ul>
+                    <li><a href="#depoimentos">Depoimentos</a></li> </ul>
+
                 <div class="header-right">
                     <div class="toggle-switch">
                         <input type="checkbox" id="toggle-dark">
                         <label for="toggle-dark"></label>
                     </div>
                     <a href="https://wa.me/5521997280118" class="btn-sm-nav">Contrate Agora</a>
+                    <button class="mobile-menu-btn" id="mobile-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -32,34 +38,32 @@
 
     <main>
         <section id="home" class="hero">
-            <div class="hero-content">
+            <div class="hero-content" data-aos="fade-right">
                 <span class="badge">Disponível para Projetos</span>
                 <h1 id="typing-text"></h1>
-                <p class="subtitle">Ajudo negócios a escalarem os seus resultados através de sites profissionais, rápidos e focados em <strong>converter visitantes em clientes.</strong></p>
+                <p class="subtitle">Ajudo negócios a escalarem através de sites profissionais, rápidos e focados em <strong>converter visitantes em clientes.</strong></p>
                 <div class="hero-buttons">
                     <a href="https://wa.me/5521997280118" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Quero um Orçamento</a>
                     <a href="mailto:michaelcosme2@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Enviar Email</a>
                 </div>
             </div>
-            <div class="hero-image">
+            <div class="hero-image" data-aos="zoom-in">
                 <div class="blob"></div>
-                <img src="img/perfil.jpg" alt="Michael Cosme" class="profile-img">
-            </div>
+               <img src="img/logo branco.png" alt="Michael Cosme" class="hero-logo">
         </section>
 
         <section id="sobre" class="container">
             <div class="about-grid">
-                <div class="about-visual">
-                    <img src="img/trunks-sword-dragon-5120x2880-20534.jpg" class="img-main" alt="Trabalho">
+                <div class="about-visual" data-aos="fade-up">
+                    <img src="img/mockup do site.png" class="img-main" alt="Foto de mockup de site">
                     <div class="experience-card">
                         <span>+20</span>
                         <p>Sites Entregues</p>
                     </div>
                 </div>
-                <div class="about-text">
+                <div class="about-text" data-aos="fade-left">
                     <h2 class="section-title left">Focado no seu <span class="highlight">Sucesso</span></h2>
                     <p>Sou o Michael Cosme, e a minha missão é fazer o seu negócio crescer no mercado digital. Não entrego apenas um site bonito; entrego uma <strong>estratégia de vendas funcional.</strong></p>
-                    <p>Estou pronto para criar a solução que a sua empresa precisa para se destacar da concorrência, com foco total em usabilidade, velocidade e performance no Google.</p>
                     <div class="about-features">
                         <div class="feature"><i class="fas fa-check-circle"></i> Sites Ultra Rápidos</div>
                         <div class="feature"><i class="fas fa-check-circle"></i> Design Exclusivo</div>
@@ -72,19 +76,19 @@
 
         <section id="servicos" class="services">
             <div class="container">
-                <h2 class="section-title">Soluções para o seu <span class="highlight">Negócio</span></h2>
+                <h2 class="section-title" data-aos="fade-down">Soluções para o seu <span class="highlight">Negócio</span></h2>
                 <div class="services-grid">
-                    <div class="service-card">
+                    <div class="service-card" data-aos="flip-left">
                         <div class="icon-box"><i class="fas fa-rocket"></i></div>
                         <h3>Landing Pages</h3>
                         <p>Páginas de alta performance para campanhas de anúncios, feitas para não perder nenhum lead.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" data-aos="flip-left" data-aos-delay="100">
                         <div class="icon-box"><i class="fas fa-briefcase"></i></div>
                         <h3>Sites Institucionais</h3>
                         <p>Posicionamento profissional para a sua marca, gerando confiança imediata no seu cliente.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" data-aos="flip-left" data-aos-delay="200">
                         <div class="icon-box"><i class="fas fa-shopping-cart"></i></div>
                         <h3>Lojas Virtuais</h3>
                         <p>Sistemas de e-commerce completos, seguros e fáceis de gerir para vender 24h por dia.</p>
@@ -94,8 +98,8 @@
         </section>
 
         <section id="projetos" class="container">
-            <h2 class="section-title">Portfólio em <span class="highlight">Destaque</span></h2>
-            <div class="carousel-wrapper">
+            <h2 class="section-title" data-aos="fade-up">Portfólio em <span class="highlight">Destaque</span></h2>
+            <div class="carousel-wrapper" data-aos="fade-up">
                 <div class="carousel-container">
                     <div class="carousel-track" id="carouselTrack">
                         <div class="carousel-item">
@@ -138,6 +142,98 @@
                 </div>
             </div>
         </section>
+
+        <section id="depoimentos" class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">O que dizem meus <span class="highlight">Clientes</span></h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+                        <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                        <p class="testimonial-text">"O Michael entregou muito mais do que um site. A nova estrutura aumentou nossas vendas em 40% no primeiro mês. Profissionalismo impecável!"</p>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente">
+                            </div>
+                            <div>
+                                <h4>Roberto Silva</h4>
+                                <span>CEO, TechSolutions</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                        <p class="testimonial-text">"Design incrível e velocidade absurda. Meu e-commerce carrega instantaneamente no celular. Recomendo de olhos fechados."</p>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente">
+                            </div>
+                            <div>
+                                <h4>Ana Ferreira</h4>
+                                <span>Fundadora, Modas & Co.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                        <p class="testimonial-text">"A atenção aos detalhes e o suporte pós-entrega fizeram toda a diferença. O Michael realmente entende de conversão."</p>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Cliente">
+                            </div>
+                            <div>
+                                <h4>Carlos Mendes</h4>
+                                <span>Diretor de Marketing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Dúvidas <span class="highlight">Frequentes</span></h2>
+                <div class="faq-wrapper" data-aos="fade-up">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Quanto tempo leva para criar um site?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>O prazo varia conforme a complexidade. Landing Pages levam em média 3 a 5 dias úteis, enquanto sites institucionais ou lojas virtuais podem levar de 15 a 30 dias. Tudo é acordado antes do início.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            O site será otimizado para celular?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sim! Todos os projetos são desenvolvidos com a metodologia "Mobile First", garantindo que funcionem perfeitamente em celulares, tablets e desktops.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Como funciona o pagamento?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Geralmente trabalhamos com 50% de entrada para início do projeto e 50% na entrega final. Aceitamos PIX, transferência e cartão de crédito.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Vou conseguir editar o site depois?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Com certeza. Entrego o site com um painel administrativo intuitivo e forneço um treinamento rápido para que você possa alterar textos e imagens sem depender de ninguém.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <a href="https://wa.me/5521997280118" class="whatsapp-float" target="_blank">
@@ -145,36 +241,58 @@
     </a>
 
     <footer>
+        <div class="footer-cta" data-aos="zoom-in">
+            <h3>Pronto para elevar o nível do seu negócio?</h3>
+            <p>Vamos construir algo incrível juntos.</p>
+            <a href="https://wa.me/5521997280118" class="btn btn-primary">Iniciar Projeto Agora</a>
+        </div>
+
         <div class="footer-container">
             <div class="footer-brand">
                 <span class="logo">Michael<span class="highlight">DEV</span></span>
-                <p>Criando soluções digitais que transformam cliques em clientes.</p>
+                <p>Criando soluções digitais que transformam cliques em clientes através de design estratégico e tecnologia de ponta.</p>
                 <div class="social-links">
                     <a href="https://github.com/michaelcosme"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/michael-cosme-a4024716a/"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="footer-contact">
-                <h4>Contato</h4>
-                <p><i class="fas fa-envelope"></i> michaelcosme2@gmail.com</p>
-                <p><i class="fas fa-phone"></i> (21) 99728-0118</p>
-            </div>
+            
             <div class="footer-links">
-                <h4>Links</h4>
+                <h4>Navegação</h4>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
                 </ul>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4>Newsletter</h4>
+                <p>Receba dicas de tecnologia e ofertas exclusivas.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Seu melhor email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+                <div class="contact-mini">
+                    <p><i class="fas fa-envelope"></i> michaelcosme2@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> (21) 99728-0118</p>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Michael Cosme. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Michael Cosme. Todos os direitos reservados. | Desenvolvido com <i class="fas fa-heart highlight"></i></p>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Inicializar Animações
+            AOS.init({ duration: 1000, once: true, offset: 100 });
+
             // Efeito de Digitação
             const element = document.getElementById("typing-text");
             const text = "Construo sites que ";
@@ -191,47 +309,88 @@
             }
             type();
 
-            // Carrossel Lógica
-            const track = document.getElementById('carouselTrack');
-            const nextBtn = document.getElementById('nextBtn');
-            const prevBtn = document.getElementById('prevBtn');
-            const dotsContainer = document.getElementById('carouselDots');
-            const items = document.querySelectorAll('.carousel-item');
-            let index = 0;
-
-            // Criar pontos (dots)
-            items.forEach((_, idx) => {
-                const dot = document.createElement('div');
-                dot.classList.add('dot');
-                if(idx === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => {
-                    index = idx;
-                    updateCarousel();
-                });
-                dotsContainer.appendChild(dot);
+            // Menu Mobile
+            const mobileBtn = document.getElementById('mobile-btn');
+            const navMenu = document.getElementById('nav-menu');
+            mobileBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                mobileBtn.querySelector('i').classList.toggle('fa-bars');
+                mobileBtn.querySelector('i').classList.toggle('fa-times');
             });
 
-            function updateCarousel() {
-                track.style.transform = `translateX(-${index * 100}%)`;
-                document.querySelectorAll('.dot').forEach((dot, idx) => {
-                    dot.classList.toggle('active', idx === index);
+            // Fechar menu ao clicar num link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    mobileBtn.querySelector('i').classList.remove('fa-times');
+                    mobileBtn.querySelector('i').classList.add('fa-bars');
+                });
+            });
+
+            // Carrossel Lógica
+            const track = document.getElementById('carouselTrack');
+            const items = document.querySelectorAll('.carousel-item');
+            const dotsContainer = document.getElementById('carouselDots');
+            let index = 0;
+
+            if(track && items.length > 0) {
+                items.forEach((_, idx) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if(idx === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => { index = idx; updateCarousel(); });
+                    dotsContainer.appendChild(dot);
+                });
+
+                function updateCarousel() {
+                    track.style.transform = `translateX(-${index * 100}%)`;
+                    document.querySelectorAll('.dot').forEach((dot, idx) => {
+                        dot.classList.toggle('active', idx === index);
+                    });
+                }
+
+                document.getElementById('nextBtn').addEventListener('click', () => {
+                    index = (index + 1) % items.length;
+                    updateCarousel();
+                });
+
+                document.getElementById('prevBtn').addEventListener('click', () => {
+                    index = (index - 1 + items.length) % items.length;
+                    updateCarousel();
+                });
+
+                // Swipe para Mobile no Carrossel
+                let touchstartX = 0;
+                track.addEventListener('touchstart', e => touchstartX = e.changedTouches[0].screenX);
+                track.addEventListener('touchend', e => {
+                    let touchendX = e.changedTouches[0].screenX;
+                    if (touchendX < touchstartX - 50) index = (index + 1) % items.length;
+                    if (touchendX > touchstartX + 50) index = (index - 1 + items.length) % items.length;
+                    updateCarousel();
                 });
             }
 
-            nextBtn.addEventListener('click', () => {
-                index = (index + 1) % items.length;
-                updateCarousel();
-            });
-
-            prevBtn.addEventListener('click', () => {
-                index = (index - 1 + items.length) % items.length;
-                updateCarousel();
-            });
-
             // Dark Mode
             const toggle = document.getElementById('toggle-dark');
-            toggle.addEventListener('change', function() {
-                document.body.classList.toggle('light-mode', this.checked);
+            toggle.addEventListener('change', () => {
+                document.body.classList.toggle('light-mode', toggle.checked);
+            });
+
+            // LÓGICA DO FAQ (NOVO)
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const btn = item.querySelector('.faq-question');
+                btn.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('active');
+                    
+                    // Fecha todos
+                    faqItems.forEach(i => i.classList.remove('active'));
+                    
+                    // Abre o clicado se não estava aberto
+                    if (!isOpen) {
+                        item.classList.add('active');
+                    }
+                });
             });
         });
     </script>
