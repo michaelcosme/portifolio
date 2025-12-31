@@ -584,3 +584,42 @@ img {
     max-width: 100%;
     height: auto;
 }
+/* ================================================================= */
+/* --- CORREÇÃO DE LEITURA: TEXTO POR CIMA DAS SOMBRAS --- */
+/* ================================================================= */
+
+@media (max-width: 900px) {
+
+    /* 1. Força o Texto a ficar na frente de qualquer sombra ou fundo */
+    .service-card h3, 
+    .service-card p, 
+    .service-card .icon-box,
+    .testimonial-card p, 
+    .testimonial-card h4, 
+    .testimonial-card span,
+    .hero-content h1, 
+    .hero-content p {
+        position: relative !important;
+        z-index: 100 !important; /* Camada suprema */
+    }
+
+    /* 2. Adiciona uma "sombra de leitura" ATRÁS da letra (não na caixa) */
+    /* Isso garante que o texto branco brilhe mesmo se o fundo for claro ou tiver sombra */
+    .service-card p, 
+    .testimonial-card p,
+    .hero-content p {
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
+        opacity: 1 !important; /* Garante que o texto não fique transparente */
+        color: #ffffff !important; /* Garante branco puro */
+    }
+
+    /* 3. Limpeza de sombras invasivas nos cards */
+    .service-card, 
+    .testimonial-card {
+        /* Remove sombras internas (inset) que escurecem o meio do card */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5) !important; 
+        
+        /* Garante um fundo escuro limpo para contraste */
+        background: #0a0a16 !important; 
+    }
+}
