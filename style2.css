@@ -744,3 +744,46 @@ img {
         text-shadow: 0 2px 4px rgba(0,0,0,0.8) !important; /* Sombra para leitura */
     }
 }
+/* ================================================================= */
+/* --- CORREÇÃO FINAL: CARROSSEL E IMAGENS CORTADAS --- */
+/* ================================================================= */
+
+@media (max-width: 900px) {
+
+    /* 1. Ajusta o "Card" do Projeto para caber perfeitamente na tela */
+    .project-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important; /* Centraliza */
+        border-radius: 15px; /* Mantém as bordas arredondadas */
+        overflow: hidden; /* O que passar da borda é cortado */
+    }
+
+    /* 2. Arruma a caixa da imagem (evita que fique muito alta ou achatada) */
+    .project-img-container {
+        width: 100% !important;
+        height: auto !important; /* Altura automática baseada na proporção */
+        aspect-ratio: 16 / 9; /* Mantém formato retangular de vídeo/youtube */
+    }
+
+    /* 3. A MÁGICA: Faz a imagem se encaixar sem esticar ou cortar errado */
+    .project-img-container img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; /* Preenche todo o espaço sem distorcer */
+        object-position: center top !important; /* Foca no topo/centro da imagem */
+        display: block;
+    }
+
+    /* 4. Garante que o carrossel (track) não empurre a tela */
+    .carousel-track {
+        padding-left: 0 !important; /* Remove espaços extras na esquerda */
+    }
+    
+    /* 5. Ajuste para os botões do carrossel não sumirem */
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        z-index: 10; /* Garante que fique acima da imagem */
+    }
+}
