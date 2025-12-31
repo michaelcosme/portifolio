@@ -701,7 +701,46 @@ img {
 
     /* 4. PREVENÇÃO GERAL DE CORTES NA TELA */
     p, h1, h2, h3, span {
-        overflow-wrap: break-word; /* Quebra a palavra se for maior que a tela */
+        overflow-wrap: break-word; /* Quebra a palavra se for maior que a tel */
         max-width: 100%;
+    }
+}
+/* ================================================================= */
+/* --- AJUSTE FINAL: CARD "+20 SITES" (BRANCO E FLUTUANTE) --- */
+/* ================================================================= */
+
+/* 1. Criamos uma animação exclusiva que força o movimento no mobile */
+@keyframes floatingMobile {
+    0%, 100% { transform: translateY(0) rotate(0deg) !important; }
+    50% { transform: translateY(-15px) rotate(2deg) !important; }
+}
+
+@media (max-width: 900px) {
+    
+    .experience-card {
+        /* Ativa a animação de flutuar (sobe e desce suavemente) */
+        animation: floatingMobile 4s ease-in-out infinite !important;
+        
+        /* Remove qualquer fundo cinza escuro, deixando apenas o brilho/vidro */
+        background: rgba(15, 15, 30, 0.9) !important;
+        border: 1px solid var(--accent) !important;
+    }
+
+    /* 2. Deixa o número "+20" TOTALMENTE BRANCO e brilhante */
+    .experience-card span {
+        background: none !important; /* Remove o degradê que apagava a cor */
+        -webkit-background-clip: initial !important;
+        -webkit-text-fill-color: #ffffff !important; /* Preenchimento branco sólido */
+        color: #ffffff !important;
+        
+        /* Adiciona um brilho roxo atrás para destacar o branco */
+        text-shadow: 0 0 20px rgba(143, 79, 255, 0.8) !important;
+    }
+
+    /* 3. Deixa o texto de baixo ("SITES ENTREGUES") branco também */
+    .experience-card p {
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.8) !important; /* Sombra para leitura */
     }
 }
