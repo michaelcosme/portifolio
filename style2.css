@@ -555,3 +555,32 @@ footer {
         margin-left: 10px;
     }
 }
+/* ================================================================= */
+/* --- CORREÇÃO FINAL: TRAVAMENTO DE TELA E ZOOM --- */
+/* ================================================================= */
+
+/* 1. Proíbe qualquer elemento de esticar a tela para os lados */
+html, body {
+    overflow-x: hidden !important; /* Corta o que estiver vazando */
+    width: 100%;
+    max-width: 100vw; /* Garante que a largura máxima é a tela do celular */
+    position: relative; /* Mantém a estrutura fixa */
+}
+
+/* 2. Ajusta a responsividade do toque (remove delays de clique) */
+html {
+    touch-action: manipulation; 
+    -webkit-text-size-adjust: 100%; /* Impede o iOS de mudar o tamanho da fonte sozinho */
+}
+
+/* 3. Garante que o brilho de fundo não crie barra de rolagem fantasma */
+.blob {
+    max-width: 100%; /* Nunca deixa o brilho ser maior que a tela */
+    overflow: hidden;
+}
+
+/* 4. Previne que imagens quebrem o layout */
+img {
+    max-width: 100%;
+    height: auto;
+}
