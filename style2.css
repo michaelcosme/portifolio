@@ -653,3 +653,55 @@ img {
         margin-bottom: 40px !important; /* Empurra o texto para longe da sombra */
     }
 }
+/* ================================================================= */
+/* --- CORREÇÃO FINAL V3: TEXTOS CORTADOS E CORES --- */
+/* ================================================================= */
+
+@media (max-width: 900px) {
+
+    /* 1. RESTAURAÇÃO DO TÍTULO DA HERO (Construo sites...) 
+       Remove a cor branca forçada para voltar a funcionar o efeito de digitação/cores */
+    .hero-content h1 {
+        color: #ffffff !important; /* Branco base */
+        z-index: 5 !important;
+        text-shadow: none !important; /* Remove sombras estranhas se houver */
+    }
+    /* Garante que a parte roxa (highlight) continue roxa */
+    .hero-content h1 .highlight {
+        color: var(--accent-vibrant) !important;
+        -webkit-text-fill-color: var(--accent-vibrant) !important;
+    }
+
+    /* 2. CORREÇÃO DOS TÍTULOS (Sobre, Serviços, Projetos)
+       Remove o efeito degradê que estava cortando as letras e força visibilidade */
+    .section-title {
+        background: none !important; /* Remove o fundo que cortava o texto */
+        -webkit-background-clip: initial !important; 
+        -webkit-text-fill-color: initial !important; /* Remove transparência */
+        color: #ffffff !important; /* Branco puro e sólido */
+        
+        position: relative !important;
+        z-index: 100 !important; /* Traz para frente da sombra roxa */
+        
+        width: 100%;
+        padding: 0 10px; /* Evita que a letra encoste na borda da tela */
+        overflow: visible !important; /* Proíbe cortar o texto */
+    }
+
+    /* 3. VISIBILIDADE DO TEXTO "FOCADO NO SEU SUCESSO" 
+       Força o texto a ficar em cima do brilho roxo */
+    .about-text, 
+    .about-text p,
+    .about-text h2 {
+        position: relative !important;
+        z-index: 101 !important; /* Camada superior */
+        color: #ffffff !important;
+        text-shadow: 0 2px 5px rgba(0,0,0,0.9) !important; /* Contraste forte contra o fundo */
+    }
+
+    /* 4. PREVENÇÃO GERAL DE CORTES NA TELA */
+    p, h1, h2, h3, span {
+        overflow-wrap: break-word; /* Quebra a palavra se for maior que a tela */
+        max-width: 100%;
+    }
+}
