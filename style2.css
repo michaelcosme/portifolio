@@ -623,3 +623,33 @@ img {
         background: #0a0a16 !important; 
     }
 }
+/* ================================================================= */
+/* --- CORREÇÃO DE EMERGÊNCIA: SEÇÃO SOBRE (TEXTO ESCURO) --- */
+/* ================================================================= */
+
+@media (max-width: 900px) {
+    
+    /* 1. Traz o texto da seção SOBRE para a frente de tudo */
+    .about-text, 
+    .section-title,
+    .highlight,
+    .feature {
+        position: relative !important;
+        z-index: 999 !important; /* Força bruta para ficar acima da sombra */
+        color: #ffffff !important; /* Garante branco puro */
+    }
+
+    /* 2. Cria contraste caso o fundo roxo vaze */
+    .about-text p {
+        position: relative !important;
+        z-index: 999 !important;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.9) !important; /* Contraste forte */
+    }
+
+    /* 3. Contém a sombra do Card de cima para não invadir o texto de baixo */
+    .experience-card {
+        z-index: 1 !important; /* Rebaixa o card para trás do texto */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5) !important; /* Reduz o espalhamento da sombra */
+        margin-bottom: 40px !important; /* Empurra o texto para longe da sombra */
+    }
+}
