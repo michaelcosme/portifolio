@@ -3,13 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Michael Cosme | Especialista em Sites de Alta Conversão</title>
+    <meta name="description" content="Desenvolvimento de sites profissionais, landing pages e e-commerces de alta performance. Transforme visitantes em clientes.">
+    <meta name="author" content="Michael Cosme">
+
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <title>Michael Cosme | Especialista em Sites de Alta Conversão</title>
+    
+    <style>
+        /* ESTILIZAÇÃO PARA A INTEGRAÇÃO SHOPIFY */
+        .shopify-top-banner {
+            background: linear-gradient(90deg, #8f4fff, #b180ff);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 1001;
+            position: relative;
+        }
+        .shopify-top-banner a {
+            color: #fff;
+            text-decoration: underline;
+            margin-left: 5px;
+            font-weight: 800;
+        }
+        .shopify-section {
+            padding: 100px 0;
+            background: var(--secondary-bg);
+        }
+        .shopify-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .shopify-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 30px var(--accent-glow);
+            transform: translateY(-10px);
+        }
+        .shopify-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        .badge-shopify {
+            background: rgba(143, 79, 255, 0.1);
+            color: var(--accent);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
+    <div class="shopify-top-banne">
+        🚀 Especialista em Shopify: Landing Pages nativas e ultra-rápidas. <a href="#shopify">Ver Serviços →</a>
+    </div>
+
     <header>
         <nav>
             <div class="nav-container">
@@ -18,9 +79,11 @@
                 <ul class="nav-links" id="nav-menu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#shopify">Shopify</a></li> 
                     <li><a href="#servicos">Serviço</a></li>
                     <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#depoimentos">Depoimentos</a></li> </ul>
+                    <li><a href="#depoimentos">Depoimentos</a></li> 
+                </ul>
 
                 <div class="header-right">
                     <div class="toggle-switch">
@@ -49,7 +112,38 @@
             </div>
             <div class="hero-image" data-aos="zoom-in">
                 <div class="blob"></div>
-               <img src="img/logo branco.png" alt="Michael Cosme" class="hero-logo">
+                <img src="img/logo branco.png" alt="Michael Cosme" class="hero-logo">
+            </div>
+        </section>
+
+        <section id="shopify" class="shopify-section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 60px;" data-aos="fade-up">
+                    <span class="badge-shopify">Dropshipping & E-commerce</span>
+                    <h2 class="section-title">Especialista <span class="highlight-green">Shopify</span></h2>
+                    <p class="subtitle" style="text-align: center; margin: 0 auto;">Desenvolvimento de Landing Pages nativas em Liquid para máxima performance.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="shopify-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="shopify-icon"><i class="fab fa-shopify"></i></div>
+                        <h3>LPs Nativas (Liquid)</h3>
+                        <p>Páginas criadas direto no código do tema. Sem mensalidades de apps e carregamento instantâneo.</p>
+                    </div>
+
+                    <div class="shopify-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="shopify-icon"><i class="fas fa-code-branch"></i></div>
+                        <h3>API de Conversão</h3>
+                        <p>Configuração de CAPI e Pixel (Meta/TikTok) via servidor para 100% de precisão nos teus anúncios.</p>
+                    </div>
+
+                    <div class="shopify-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="shopify-icon"><i class="fas fa-bolt"></i></div>
+                        <h3>Velocidade Máxima</h3>
+                        <p>Otimização de Core Web Vitals para reduzir o abandono e explodir sua taxa de conversão.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="sobre" class="container">
@@ -63,12 +157,12 @@
                 </div>
                 <div class="about-text" data-aos="fade-left">
                     <h2 class="section-title left">Focado no seu <span class="highlight">Sucesso</span></h2>
-                    <p>Sou o Michael Cosme, e a minha missão é fazer o seu negócio crescer no mercado digital. Não entrego apenas um site bonito; entrego uma <strong>estratégia de vendas funcional.</strong></p>
+                    <p>Sou Michael Cosme, e ajudo empresas a conquistarem o destaque que merecem no ambiente online. Não entrego apenas um site bonito; entrego uma ferramenta de alta <strong>performance focada em conversão.</strong></p>
                     <div class="about-features">
                         <div class="feature"><i class="fas fa-check-circle"></i> Sites Ultra Rápidos</div>
                         <div class="feature"><i class="fas fa-check-circle"></i> Design Exclusivo</div>
                         <div class="feature"><i class="fas fa-check-circle"></i> Otimizado para Mobile</div>
-                        <div class="feature"><i class="fas fa-check-circle"></i> Foco em Vendas</div>
+                        <div class="feature"><i class="fas fa-check-circle"></i> SEO e SSL</div>
                     </div>
                 </div>
             </div>
@@ -106,29 +200,51 @@
                             <div class="project-glass-card">
                                 <div class="project-img-container">
                                     <img src="img/MEGA QUIZ 2025.png" alt="Mega Quiz">
-                                    <div class="project-overlay">
-                                        <a href="#" class="btn btn-primary btn-sm">Ver Detalhes</a>
-                                    </div>
+                                    <div class="project-overlay"><a href="#" class="btn btn-primary btn-sm">Ver Detalhes</a></div>
                                 </div>
                                 <div class="project-details">
                                     <span class="category">WebApp Interativo</span>
                                     <h3>Mega Quiz 2025</h3>
-                                    <p>Plataforma de engajamento dinâmico desenvolvida com foco em UX.</p>
+                                    <p>Sistema de QUIZ para o evento MEGAHELP 2025.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="project-glass-card">
                                 <div class="project-img-container">
-                                    <img src="img/dragon-ball-daima-3840x2160-19049.jpeg" alt="Exemplo">
-                                    <div class="project-overlay">
-                                        <a href="#" class="btn btn-primary btn-sm">Ver Detalhes</a>
-                                    </div>
+                                    <img src="img/paisagismo.png" alt="Paisagismo">
+                                    <div class="project-overlay"><a href="#" class="btn btn-primary btn-sm">Ver Detalhes</a></div>
                                 </div>
                                 <div class="project-details">
-                                    <span class="category">E-commerce</span>
-                                    <h3>Modern Store</h3>
-                                    <p>Design focado em conversão e rapidez de carregamento.</p>
+                                    <span class="category">Landing Page</span>
+                                    <h3>Arvore da Vida</h3>
+                                    <p>Design inovado e moderno para a marca.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="project-glass-card">
+                                <div class="project-img-container">
+                                    <img src="img/ASBI.png" alt="Projeto Social ASBI">
+                                    <div class="project-overlay"><a href="#" class="btn btn-primary btn-sm">Ver Detalhes</a></div>
+                                </div>
+                                <div class="project-details">
+                                    <span class="category">Landing Page</span>
+                                    <h3>ASBI</h3>
+                                    <p>Projeto criado para cuidado da saúde bucal infantil</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="project-glass-card">
+                                <div class="project-img-container">
+                                    <img src="img/carro.png" alt="Projeto Carro">
+                                    <div class="project-overlay"><a href="#" class="btn btn-primary btn-sm">Ver Detalhes</a></div>
+                                </div>
+                                <div class="project-details">
+                                    <span class="category">Landing Page</span>
+                                    <h3>Carros</h3>
+                                    <p>Projeto criado para divulgação de veículos</p>
                                 </div>
                             </div>
                         </div>
@@ -151,39 +267,24 @@
                         <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
                         <p class="testimonial-text">"O Michael entregou muito mais do que um site. A nova estrutura aumentou nossas vendas em 40% no primeiro mês. Profissionalismo impecável!"</p>
                         <div class="client-info">
-                            <div class="client-avatar">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente">
-                            </div>
-                            <div>
-                                <h4>Roberto Silva</h4>
-                                <span>CEO, TechSolutions</span>
-                            </div>
+                            <div class="client-avatar"><img src="img/ARVORE DA VIDA.jpg" alt="Cliente"></div>
+                            <div><h4>Jhonathan Ferreira</h4><span>Árvore da vida</span></div>
                         </div>
                     </div>
                     <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
-                        <p class="testimonial-text">"Design incrível e velocidade absurda. Meu e-commerce carrega instantaneamente no celular. Recomendo de olhos fechados."</p>
+                        <p class="testimonial-text">"Amamos o projeto, e a entrega foi impecável!"</p>
                         <div class="client-info">
-                            <div class="client-avatar">
-                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente">
-                            </div>
-                            <div>
-                                <h4>Ana Ferreira</h4>
-                                <span>Fundadora, Modas & Co.</span>
-                            </div>
+                            <div class="client-avatar"><img src="img/LOGOASBI.jpg" alt="Cliente"></div>
+                            <div><h4>Alana Gomes</h4><span>Fundadora do Projeto ASBI.</span></div>
                         </div>
                     </div>
                     <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
-                        <p class="testimonial-text">"A atenção aos detalhes e o suporte pós-entrega fizeram toda a diferença. O Michael realmente entende de conversão."</p>
+                        <p class="testimonial-text">"O sistema funcionou super bem, e o evento foi um sucesso!"</p>
                         <div class="client-info">
-                            <div class="client-avatar">
-                                <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Cliente">
-                            </div>
-                            <div>
-                                <h4>Carlos Mendes</h4>
-                                <span>Diretor de Marketing</span>
-                            </div>
+                            <div class="client-avatar"><img src="img/ana ligia.png" alt="Cliente"></div>
+                            <div><h4>Ana Ligia</h4><span>Particpante do Evento</span></div>
                         </div>
                     </div>
                 </div>
@@ -195,50 +296,27 @@
                 <h2 class="section-title" data-aos="fade-up">Dúvidas <span class="highlight">Frequentes</span></h2>
                 <div class="faq-wrapper" data-aos="fade-up">
                     <div class="faq-item">
-                        <button class="faq-question">
-                            Quanto tempo leva para criar um site?
-                            <i class="fas fa-plus"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>O prazo varia conforme a complexidade. Landing Pages levam em média 3 a 5 dias úteis, enquanto sites institucionais ou lojas virtuais podem levar de 15 a 30 dias. Tudo é acordado antes do início.</p>
-                        </div>
+                        <button class="faq-question">Quanto tempo leva para criar um site? <i class="fas fa-plus"></i></button>
+                        <div class="faq-answer"><p>O prazo varia conforme a complexidade. Landing Pages levam em média 3 a 5 dias úteis, enquanto sites institucionais ou lojas virtuais podem levar de 15 a 30 dias. Tudo é acordado antes do início.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">
-                            O site será otimizado para celular?
-                            <i class="fas fa-plus"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Sim! Todos os projetos são desenvolvidos com a metodologia "Mobile First", garantindo que funcionem perfeitamente em celulares, tablets e desktops.</p>
-                        </div>
+                        <button class="faq-question">O site será otimizado para celular? <i class="fas fa-plus"></i></button>
+                        <div class="faq-answer"><p>Sim! Todos os projetos são desenvolvidos com a metodologia "Mobile First", garantindo que funcionem perfeitamente em celulares, tablets e desktops.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">
-                            Como funciona o pagamento?
-                            <i class="fas fa-plus"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Geralmente trabalhamos com 50% de entrada para início do projeto e 50% na entrega final. Aceitamos PIX, transferência e cartão de crédito.</p>
-                        </div>
+                        <button class="faq-question">Como funciona o pagamento? <i class="fas fa-plus"></i></button>
+                        <div class="faq-answer"><p>Geralmente trabalhamos com 50% de entrada para início do projeto e 50% na entrega final. Aceitamos PIX, transferência e cartão de crédito.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">
-                            Vou conseguir editar o site depois?
-                            <i class="fas fa-plus"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Com certeza. Entrego o site com um painel administrativo intuitivo e forneço um treinamento rápido para que você possa alterar textos e imagens sem depender de ninguém.</p>
-                        </div>
+                        <button class="faq-question">Vou conseguir editar o site depois? <i class="fas fa-plus"></i></button>
+                        <div class="faq-answer"><p>Com certeza. Entrego o site com um painel administrativo intuitivo e forneço um treinamento rápido para que você possa alterar textos e imagens sem depender de ninguém.</p></div>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
-    <a href="https://wa.me/5521997280118" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/5521997280118" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <footer>
         <div class="footer-cta" data-aos="zoom-in">
@@ -270,38 +348,37 @@
             </div>
 
             <div class="footer-newsletter">
-                <h4>Newsletter</h4>
-                <p>Receba dicas de tecnologia e ofertas exclusivas.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Seu melhor email">
-                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                </form>
-                <div class="contact-mini">
+    <h4>Newsletter</h4>
+    <p>Receba dicas de tecnologia e ofertas exclusivas.</p>
+    <form action="https://formspree.io/f/mykzqrpb" method="POST" class="newsletter-form">
+        <input type="email" name="email" placeholder="Seu melhor email" required>
+        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+    </form>
+    <div class="contact-mini">
                     <p><i class="fas fa-envelope"></i> michaelcosme2@gmail.com</p>
                     <p><i class="fas fa-phone"></i> (21) 99728-0118</p>
                 </div>
             </div>
+                
+            </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Michael Cosme. Todos os direitos reservados. | Desenvolvido com <i class="fas fa-heart highlight"></i></p>
+            <p>&copy; 2026 Michael Cosme. Todos os direitos reservados. | Desenvolvido com <i class="fas fa-heart highlight"></i></p>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Inicializar Animações
             AOS.init({ duration: 1000, once: true, offset: 100 });
 
-            // Efeito de Digitação
             const element = document.getElementById("typing-text");
-            const text = "Construo sites que ";
-            const highlight = "<span class='highlight'>vendem sozinhos.</span>";
+            const text = "Comece seu projeto hoje.";
+            const highlight = "<span class='highlight'>Vamos lá?</span>";
             let i = 0;
             function type() {
                 if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
+                    element.innerHTML += text.charAt(i); i++;
                     setTimeout(type, 60);
                 } else {
                     setTimeout(() => { element.innerHTML += highlight; }, 400);
@@ -309,7 +386,6 @@
             }
             type();
 
-            // Menu Mobile
             const mobileBtn = document.getElementById('mobile-btn');
             const navMenu = document.getElementById('nav-menu');
             mobileBtn.addEventListener('click', () => {
@@ -318,7 +394,6 @@
                 mobileBtn.querySelector('i').classList.toggle('fa-times');
             });
 
-            // Fechar menu ao clicar num link
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', () => {
                     navMenu.classList.remove('active');
@@ -327,7 +402,6 @@
                 });
             });
 
-            // Carrossel Lógica
             const track = document.getElementById('carouselTrack');
             const items = document.querySelectorAll('.carousel-item');
             const dotsContainer = document.getElementById('carouselDots');
@@ -344,52 +418,22 @@
 
                 function updateCarousel() {
                     track.style.transform = `translateX(-${index * 100}%)`;
-                    document.querySelectorAll('.dot').forEach((dot, idx) => {
-                        dot.classList.toggle('active', idx === index);
-                    });
+                    document.querySelectorAll('.dot').forEach((dot, idx) => dot.classList.toggle('active', idx === index));
                 }
 
-                document.getElementById('nextBtn').addEventListener('click', () => {
-                    index = (index + 1) % items.length;
-                    updateCarousel();
-                });
-
-                document.getElementById('prevBtn').addEventListener('click', () => {
-                    index = (index - 1 + items.length) % items.length;
-                    updateCarousel();
-                });
-
-                // Swipe para Mobile no Carrossel
-                let touchstartX = 0;
-                track.addEventListener('touchstart', e => touchstartX = e.changedTouches[0].screenX);
-                track.addEventListener('touchend', e => {
-                    let touchendX = e.changedTouches[0].screenX;
-                    if (touchendX < touchstartX - 50) index = (index + 1) % items.length;
-                    if (touchendX > touchstartX + 50) index = (index - 1 + items.length) % items.length;
-                    updateCarousel();
-                });
+                document.getElementById('nextBtn').addEventListener('click', () => { index = (index + 1) % items.length; updateCarousel(); });
+                document.getElementById('prevBtn').addEventListener('click', () => { index = (index - 1 + items.length) % items.length; updateCarousel(); });
             }
 
-            // Dark Mode
             const toggle = document.getElementById('toggle-dark');
-            toggle.addEventListener('change', () => {
-                document.body.classList.toggle('light-mode', toggle.checked);
-            });
+            toggle.addEventListener('change', () => { document.body.classList.toggle('light-mode', toggle.checked); });
 
-            // LÓGICA DO FAQ (NOVO)
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
-                const btn = item.querySelector('.faq-question');
-                btn.addEventListener('click', () => {
+                item.querySelector('.faq-question').addEventListener('click', () => {
                     const isOpen = item.classList.contains('active');
-                    
-                    // Fecha todos
                     faqItems.forEach(i => i.classList.remove('active'));
-                    
-                    // Abre o clicado se não estava aberto
-                    if (!isOpen) {
-                        item.classList.add('active');
-                    }
+                    if (!isOpen) item.classList.add('active');
                 });
             });
         });

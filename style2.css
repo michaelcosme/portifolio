@@ -113,7 +113,7 @@ body.light-mode nav { background: rgba(255, 255, 255, 0.8); }
     animation: floatingHero 3s ease-in-out infinite;
 }
 .hero-content h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 25px; font-weight: 800; }
-.subtitle { font-size: 1.2rem; color: var(--subtitle); margin-bottom: 40px; max-width: 550px; }
+.subtitle { font-size: 1.2rem; color: var(--subtitle); margin-bottom: 40px; max-width: 550px;  }
 
 .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; }
 .btn { padding: 18px 36px; border-radius: 16px; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: var(--transition); border: none; cursor: pointer; }
@@ -206,24 +206,118 @@ body.light-mode .experience-card p { color: var(--text); }
 .category { color: var(--accent-vibrant); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 10px; display: block; }
 
 /* --- NOVO: DEPOIMENTOS --- */
-.testimonials-section { background: var(--secondary-bg); padding: 100px 0; }
-.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+/* Container da Seção */
+.testimonials-section { 
+    background: var(--secondary-bg); 
+    padding: 80px 0; 
+    overflow: hidden; /* Evita scrolls indesejados do carrossel */
+}
 
+/* Grid / Slider Container */
+.testimonials-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    align-items: stretch; 
+}
+
+/* O Card Individual */
 .testimonial-card {
     background: var(--primary-bg);
     padding: 40px;
     border-radius: 20px;
     border: 1px solid var(--glass-border);
     position: relative;
-    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    box-sizing: border-box;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: grab;
 }
-.testimonial-card:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 10px 30px rgba(143, 79, 255, 0.1); }
-.quote-icon { font-size: 2rem; color: var(--accent); opacity: 0.3; margin-bottom: 20px; }
-.testimonial-text { font-style: italic; color: var(--subtitle); margin-bottom: 30px; line-height: 1.8; }
-.client-info { display: flex; align-items: center; gap: 15px; }
-.client-avatar img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); }
-.client-info h4 { font-size: 1rem; margin-bottom: 2px; }
-.client-info span { font-size: 0.8rem; color: var(--subtitle); }
+
+.testimonial-card:active {
+    cursor: grabbing;
+}
+
+/* Efeito de Hover */
+.testimonial-card:hover { 
+    transform: translateY(-10px); 
+    border-color: var(--accent); 
+    box-shadow: 0 10px 30px rgba(143, 79, 255, 0.1); 
+}
+
+/* Ícone de Aspas */
+.quote-icon { 
+    font-size: 2rem; 
+    color: var(--accent); 
+    opacity: 0.3; 
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+/* Texto do Depoimento */
+.testimonial-text { 
+    font-style: italic; 
+    color: var(--subtitle); 
+    margin-bottom: 30px; 
+    line-height: 1.8;
+    /* Força o preenchimento do espaço para alinhar o rodapé */
+    flex: 1 1 auto; 
+}
+
+/* Bloco do Cliente (Foto + Nome) */
+.client-info { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    margin-top: auto; 
+    flex-shrink: 0;
+}
+
+.client-avatar img { 
+    width: 50px !important; 
+    height: 50px !important; 
+    min-width: 50px;
+    max-width: 50px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 2px solid var(--accent); 
+    display: block;
+}
+
+.client-info h4 { 
+    font-size: 1rem; 
+    margin: 0 0 2px 0; 
+    color: #fff;
+    font-weight: 600;
+}
+
+.client-info span { 
+    font-size: 0.8rem; 
+    color: var(--subtitle); 
+}
+
+/* --- AJUSTES ESPECÍFICOS PARA MOBILE --- */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        display: flex; /* Melhora compatibilidade com sliders mobile */
+        gap: 0; 
+    }
+
+    .testimonial-card {
+        padding: 30px;
+        /* Aumentamos a altura mínima para que nenhum card fique pequeno */
+        min-height: 420px; 
+        /* Adicionamos uma margem lateral para não colar nas bordas do celular */
+        margin: 15px; 
+        width: calc(100% - 30px);
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+    }
+}
 
 /* --- NOVO: FAQ (Perguntas Frequentes) --- */
 .faq-section { padding: 100px 0; }
@@ -786,4 +880,217 @@ img {
         height: 40px;
         z-index: 10; /* Garante que fique acima da imagem */
     }
+}
+/* ========================================== 
+   SEÇÃO SHOPIFY EXPERT - ESTILO PREMIUM
+   ========================================== */
+
+/* Cor de destaque Verde (Remete a Lucro/Dinheiro) */
+.highlight-green {
+    color: #00ff88; 
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+}
+
+/* Banner de topo vibrante */
+.shopify-top-banner {
+    background: linear-gradient(90deg, #8f4fff, #00ff88) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilização dos Cards Shopify */
+.shopify-card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(143, 79, 255, 0.2) !important;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.shopify-card:hover {
+    border-color: #00ff88 !important;
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2) !important;
+    background: rgba(0, 255, 136, 0.03) !important;
+}
+
+/* O ícone brilha em verde no hover */
+.shopify-card:hover .shopify-icon {
+    color: #00ff88 !important;
+    filter: drop-shadow(0 0 15px #00ff88);
+}
+
+.shopify-icon {
+    transition: var(--transition);
+}
+
+/* Badge de destaque */
+.badge-shopify {
+    background: rgba(0, 255, 136, 0.1) !important;
+    color: #00ff88 !important;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    font-weight: 800;
+}
+
+/* Ajuste para o Modo Claro */
+body.light-mode .shopify-card {
+    background: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+body.light-mode .highlight-green {
+    color: #00a85a;
+    text-shadow: none;
+}
+/* ========================================== 
+   RESPONSIVIDADE SHOPIFY (MOBILE)
+   ========================================== */
+
+@media (max-width: 900px) {
+    /* Faz os cards da Shopify virarem um slider lateral no celular (Estilo App) */
+    /* Se preferir que fiquem um abaixo do outro, mude 'flex-direction' para 'column' */
+    .shopify-grid {
+        display: flex !important;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+        padding: 20px 20px 40px 20px !important;
+        margin: 0 -20px; /* Expande até a borda da tela */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Esconde a barra de rolagem para um visual mais limpo */
+    .shopify-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Ajusta o tamanho dos cards no celular */
+    .shopify-card {
+        min-width: 280px;
+        max-width: 280px;
+        scroll-snap-align: center;
+        padding: 30px 20px !important;
+        text-align: center;
+    }
+
+    /* Garante que o título da seção não corte */
+    .section-title .highlight-green {
+        display: inline-block;
+        text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    }
+    
+    /* Feedback visual ao tocar no card no celular */
+    .shopify-card:active {
+        transform: scale(0.98);
+        border-color: #00ff88 !important;
+    }
+}
+/* ========================================== 
+   ESTILIZAÇÃO NEWSLETTER (CLASSE CORRETA)
+   ========================================== */
+
+.footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-newsletter h4 {
+    color: var(--text);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.footer-newsletter p {
+    color: var(--subtitle);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* O formulário em si */
+.footer-newsletter .newsletter-form {
+    display: flex;
+    align-items: center;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    padding: 5px 5px 5px 20px;
+    transition: var(--transition);
+    max-width: 100%;
+}
+
+.footer-newsletter .newsletter-form:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 15px var(--accent-glow);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.footer-newsletter .newsletter-form input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font-size: 0.9rem;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-newsletter .newsletter-form button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    flex-shrink: 0; /* Impede o botão de amassar */
+}
+
+.footer-newsletter .newsletter-form button:hover {
+    background: var(--accent-vibrant);
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* Ajuste para o Modo Claro */
+body.light-mode .footer-newsletter .newsletter-form {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .footer-newsletter .newsletter-form input {
+    color: #1a1a2e;
+}
+/* ========================================== 
+   CORREÇÃO DE COR NO MOBILE
+   ========================================== */
+
+@media (max-width: 768px) {
+    /* Garante que o destaque continue roxo no mobile */
+    .highlight, 
+    .footer-brand .logo .highlight,
+    .hero-content h1 .highlight {
+        color: var(--accent) !important;
+        text-shadow: 0 0 15px var(--accent-glow) !important;
+        -webkit-text-fill-color: var(--accent) !important; /* Para navegadores Safari/iPhone */
+    }
+
+    /* Ajuste específico para o logotipo no rodapé se ele estiver branco */
+    .footer-brand .logo {
+        color: var(--text) !important;
+    }
+}
+
+/* Ajuste para o Modo Claro no Mobile */
+body.light-mode .highlight {
+    color: var(--accent) !important;
+    text-shadow: none !important;
 }
